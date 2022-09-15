@@ -1,4 +1,4 @@
-// -Declaração de constantes
+//constantes
 const buttonLogin = document.querySelector('#button');
 
 function errorAlert() {
@@ -40,7 +40,7 @@ function addEventListenerChecker() {
 
 buttonLogin.addEventListener('click', addEventListenerChecker);
 
-// Função que verifica o status do checkbox e altera entre enable e disable o submit-btn
+// Função que verifica o status do checkbox 
 const buttonStatus = document.querySelector('#submit-btn');
 const agreementStatus = document.querySelector('#agreement');
 function changeButtonStatus() {
@@ -54,7 +54,6 @@ function changeButtonStatus() {
 
 agreementStatus.addEventListener('click', changeButtonStatus);
 
-// Função que utiliza o evento Input para ser acionada e assim verificar o length do textArea e com isso fazer a conta do valor e mostrar na tela.
 /* Utilizei esse conceito seguindo a lógica encontrada no link abaixo
 Link: https://stackoverflow.com/questions/5371089/count-characters-in-textarea */
 const textareaElement = document.querySelector('#textarea');
