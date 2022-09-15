@@ -1,35 +1,43 @@
 .header {
     background-color: rgb(50, 167, 145);
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.trybewarts-login {
+  }
+  
+  .trybewarts-login {
     display: flex;
-}
-main {
+  }
+  
+  main {
     display: flex;
     justify-content: space-around;
-}
-#evaluation-form {
+  }
+  
+  #evaluation-form {
     display: flex;
     width: 675px;
     flex-direction: column;
-}
-#trybe-forms-logo {
+  }
+  
+  #trybewarts-forms-logo {
     height: 500px;
-}
-.textarea {
+  }
+  
+  .textarea {
     flex-basis: 90%;
-}
-#checkbox-agreement {
+  }
+  
+  #checkbox-agreement {
     display: flex;
     margin-top: 10px;
-} 
-#textarea-header {
+  }
+  
+  #textarea-header {
     display: flex;
     align-items: center;
-}
-#counter {
+  }
+  
+  #counter {
     align-self: center;
-}
+  }

@@ -1,112 +1,165 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trybewarts</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trybewarts</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!--Header-->
-    <header class="header">
-        <img src="/images/trybewarts-header-logo.svg" alt="Logo Trybe" class="trybewarts-header-logo">
-    
-    <h1 class="trybewarts-header-title">Trybewarts</h1>
-    <form action="" method="get" class="trybewarts-login">
-    <input type="text" name="login-email" placeholder="Login" id="email" />
-    <input type="text" name="password" placeholder="Senha" id="password" />
-    <button id="button">Entrar</button>
+  <!-- *header -->
+  <header class="header">
+    <img class="trybewarts-header-logo" src="images/trybewarts-header-logo.svg" alt="" />
+    <h1 id='trybewarts-header-title'>Trybewarts</h1>
+    <form action="" method="GET" class="trybewarts-login">
+      <input type="text" name="login-email" placeholder="Login" id="email" />
+      <input type="text" name="password" placeholder="Senha" id="password" />
+      <button id="button">Entrar</button>
     </form>
-    </header>
-    <main>
-        <form action="" method="get" id="evaluation-form">
+  </header>
+  <main>
+    <form action="" method="get" id='evaluation-form'>
+      <div>
+        <input type="text" name="name" value="" placeholder="Nome" id="input-name">
+        <input type="text" name="lastname" value="" placeholder="Sobrenome" id="input-lastname">
+      </div>
+      <!-- no  ex 11 pedia para deixar tanto o Email quanto as casas um ao lado do outro, por isso adicionei eles dentro de uma div. Assim, o display deixa de ser flex e consequentemente deixa os elementos um ao lado do outro -->
+      <div>
+        <input type="text" name="email" value="" placeholder="Email" id="input-email">
+        <!-- É pedido que seja adicionado o id='house' no elemento que armazena as casas, porém já foi adicionado por um requisito anterior -->
+        <select name="house" value="" id="house">
+          <option value="Gitnória" id='gitnoria-house'>Gitnória</option>
+          <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
+          <option value="Corvinode" id="corvinode-house">Corvinode</option>
+          <option value="Pytherina" id="pytherina-house">Pytherina</option>
+        </select>
+        <!-- o hr é pra criar o efeito visual de uma linha separando os cconteudos -->
+        <hr>
+        <!-- Eu criei input do tipo radio para poder escolher qual das três familias vou pertencer -->
+        <section>
+          <div>
+            <!-- Deixei a pergunta em uma label por escolha mesmo -->
+            <label id='label-family'>Qual sua família?</label>
             <div>
-            <input type="text" value="" id="input-name" placeholder="Nome">
-            <input type="text" value="" id="input-lastname" placeholder="Sobrenome">
+              <!-- decidi deixar cada input dentro de uma div para que poça ficar uma de baaixo da outra sem ter que usar css -->
+              <div>
+                <input type="radio" name="family" id='Frontend' value="Frontend">
+                <label for="Frontend">Família Frontend</label>
+              </div>
+              <div>
+                <input type="radio" name="family" id='Backend' value="Backend">
+                <label for="Backend">Família Backend</label>
+              </div>
+              <div>
+                <input type="radio" name="family" id='FullStack' value="FullStack">
+                <label for="FullStack">Família FullStack</label>
+              </div>
             </div>
-<!--No requisito 11 do projeto, pede para deixar tanto o emial quanto as casas um do lado do outro, por isso
-coloquei dentro de uma div só, dessa forma o display deixa de ser flex e consequentemente deixa os elementos um do lado do outro-->
+          </div>
+          <div>
+            <!-- contrução de um questionario -->
+            <label id="label-content">Qual conteúdo você está com mais vontade de aprender?</label>
             <div>
-            <input type="text" value="" id="input-email" placeholder="Email">
-
-                <select name="house" value="" id="house">
-                    <option id="gitnoria-house" value="Gitnória">Gitnória</option>
-                    <option id="reactpuff-house" value="Reactpuff">Reactpuff</option>
-                    <option id="covirnode-house" value="Corvinode">Corvinode</option>
-                    <option id="pytherina-house" value="Pytherina">Pytherina</option>
-                </select>
-                <hr>
-                <section>
-                    <div>
-                        <label id="Label-family">Qual sua família?</label>
-                        <div>
-                            <div>
-                            <input type="radio" name="family" id="Frontend" value="Frontend">
-                            <label for="Frontend">Família Frontend</label></div>
-                            <div>
-                            <input type="radio" name="family" id="Backend" value="Backend">
-                            <label for="Backend">Família Backend</label></div>
-                            <div>
-                            <input type="radio" name="family" id="FullStack" value="FullStack">
-                            <label for="FullStack">Família FullStack</label></div>
-                          
-                        </div> 
-                    </div>
-                    <!--Construindo o formulário-->
-                    <label id="label-content">Qual conteúdo você está com mais vontade de aprender?</label>
-                    <div>
-                        <!--HoFs-->
-                        <label class="subject">
-                            <input  for="HoFs" name="HoFs" id="HoFs" type="checkbox" value="HoFs">HoFs</label>
-                        <!--Jest-->
-                        <label class="subject">
-                            <input for="Jest" name="Jest" id="Jest" type="checkbox" value="Jest">Jest</label>
-                        <!--Promises-->
-                        <label class="subject">
-                            <input  for="Promises" name="Promises" id="Promises" type="checkbox" value="Promises">Promises</label>
-                        <!--React-->
-                        <label class="subject">
-                            <input for="React" type="checkbox" name="React" id="React" value="React">React</label>
-                        <!--SQL-->
-                        <label class="subject">
-                            <input for="SQL" name="SQL" id="SQL" type="checkbox" value="SQL">SQL</label>
-                        <!--Python-->
-                        <label class="subject">
-                            <input for="Python" name="Python" id="Python" type="checkbox" value="Python">Python</label>
-                    </div>
-                    <section>
-                        <label id="label-rate">Como você avalia a Trybewarts?</label>
-                        <label><input type="radio" name="rate" value="1">1</label>
-                        <label><input type="radio" name="rate" value="2">2</label>
-                        <label><input type="radio" name="rate" value="3">3</label>
-                        <label><input type="radio" name="rate" value="4">4</label>
-                        <label><input type="radio" name="rate" value="5">5</label>
-                        <label><input type="radio" name="rate" value="6">6</label>
-                        <label><input type="radio" name="rate" value="7">7</label>
-                        <label><input type="radio" name="rate" value="8">8</label>
-                        <label><input type="radio" name="rate" value="9">9</label>
-                        <label><input type="radio" name="rate" value="10">10</label>
-                        </label>
-                    </section>
-                </div>
-                <div id="textarea-header">
-                    <label for="textarea" class="textarea">Deixe seu comentário:</label>
-                    <p id="counter">500</p>
-                </div>
-                <textarea name="textarea" id="textarea" cols="30" rows="10" maxlength="500"></textarea>
-                <!--Div para encapsular o label e checkbox que são relacionados e por um ao lado pelo flex no css.-->
-                <div id="checkbox-agreement">
-                    <label for="" id="label-infos">Você concorda com o uso das informações acima?</label>
-                    <input type="checkbox" name="agreement" id="agreement">
-                </div>
-                <button type="submit" disabled id="submit-btn">Enviar</button>
-                </form>
-                <img src="/images/trybewarts-colored.svg" alt="trybewarts-logo" id="trybewarts-forms-logo">
-    </main>
-    <!--Criando um footer e estilizando para o requisito 19-->
-    <footer>Direitos reservados à Trybewarts©</footer>
+              <!-- foi pedido que ficassem uma do lado da outra, por isso não coloquei as div's e que os input's ficassem dentro da label se não o lint não passava -->
+              <!-- HoFs -->
+              <label class="subject">
+                <input for="HoFs" name="HoFs" id="HoFs" type="checkbox" value='HoFs'>
+                HoFs
+              </label>
+              <!-- Jest -->
+              <label class="subject">
+                <input for="Jest" name="Jest" id="Jest" type="checkbox" value='Jest'>
+                Jest
+              </label>
+              <!-- Promises -->
+              <label class="subject">
+                <input for="Promises" name="Promises" id="Promises" type="checkbox" value='Promises'>
+                Promises
+              </label>
+              <!-- React -->
+              <label class="subject">
+                <input for="React" name="React" id="React" type="checkbox" value='React'>
+                React
+              </label>
+              <!-- SQL -->
+              <label class="subject">
+                <input for="SQL" name="SQL" id="SQL" type="checkbox" value='SQL'>
+                SQL
+              </label>
+              <!-- Python -->
+              <label class="subject">
+                <input for="Python" name="Python" id="Python" type="checkbox" value='Python'>
+                Python</label>
+            </div>  
+          </div>
+        </section>
+        <hr>
+        <section>
+          <label id="label-rate">Como você avalia a Trybewarts?</label>
+          <!-- caixa 1 -->
+          <label>
+            <input type="radio" name="rate" value="1" id="">1
+          </label>
+          <!-- caixa 2 -->
+          <label>
+            <input type="radio" name="rate" value="2" id="">2
+          </label>
+          <!-- caixa 3 -->
+          <label>
+            <input type="radio" name="rate" value="3" id="">3
+          </label>
+          <!-- caixa 4 -->
+          <label>
+            <input type="radio" name="rate" value="4" id="">4
+          </label>
+          <!-- caixa 5 -->
+          <label>
+            <input type="radio" name="rate" value="5" id="">5
+          </label>
+          <!-- caixa 6 -->
+          <label>
+            <input type="radio" name="rate" value="6" id="">6
+          </label>
+          <!-- caixa 7 -->
+          <label>
+            <input type="radio" name="rate" value="7" id="">7
+          </label>
+          <!-- caixa 8 -->
+          <label>
+            <input type="radio" name="rate" value="8" id="">8
+          </label>
+          <!-- caixa 9 -->
+          <label>
+            <input type="radio" name="rate" value="9" id="">9
+          </label>
+          <!-- caixa 10 -->
+          <label>
+            <input type="radio" name="rate" value="10" id="">10
+          </label>
+        </section>
+      </div>
+      <!-- Div criada para poder usar flexbox e assim deixar o label e o p em lados opostos -->
+      <div id="textarea-header">
+        <label for="textarea" class="textarea">Deixe seu comentário:</label>
+        <p id="counter">500</p>
+      </div>
+      <textarea name="textarea" id="textarea" cols="30" rows="10" maxlength="500"></textarea>
+      <!-- Div para encapsular o label e checkbox que são relacionados e por um ao lado pelo flex -->
+      <div id="checkbox-agreement">
+        <label for="" id="label-infos">Você concorda com o uso das informações acima?</label>
+        <input type="checkbox" name="agreement" id="agreement">
+      </div>
+      <button type="submit" disabled id="submit-btn">Enviar</button>    
+    </form>
+    <img src="images/trybewarts-colored.svg" alt="trybewarts-logo" id='trybewarts-forms-logo'>
+  </main>
+  <!-- Criado Footer se estilização para o requisito 19 -->
+  <footer>Direitos reservados à Trybewarts©</footer>
+  <script src="script.js"></script>
 </body>
 </html>
-               
